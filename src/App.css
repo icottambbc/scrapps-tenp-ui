@@ -46,8 +46,13 @@ h1 {
 
 .meal-list__item {
   width: calc(100% / 3);
-  padding: 30px;
+  padding: 0 30px;
   box-sizing: border-box;
+}
+
+.meal-list__item p {
+  margin: 0;
+  margin-bottom: 10px;
 }
 
 .meal-list__item img {
@@ -56,4 +61,74 @@ h1 {
 
 .App-link {
   color: #61dafb;
+}
+
+.form {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  align-items: flex-start;
+}
+
+.form-field__input {
+  height: 48px;
+  width: 100%;
+  margin: 12px 0;
+  padding: 0 0.75em;
+  background: #040b12;
+  color: #e3e3e8;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  outline: none;
+  border: 0;
+  border-radius: 2px;
+  font-family: Ruda,sans-serif;
+}
+
+.pill-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  min-width: 160px;
+  max-width: 320px;
+  margin: 0.7em 16px 1em;
+  padding: 10px 0;
+  font-family: Ruda,sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  border-radius: 500px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.effect__bg-fade {
+  background: #fa4141;
+  transition-property: background-color,border-color,color,box-shadow,filter,-webkit-filter;
+  transition-duration: .3s;
+  letter-spacing: 2px;
+  white-space: normal;
+  width: 100%;
+}
+
+.success-banner {
+  background: forestgreen;
+  padding: 10px;
+  margin-bottom: 20px;
 }

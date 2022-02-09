@@ -6,6 +6,15 @@ import { Meal } from "../models/meal";
 
 function CreateMeal() {
 
+  const emptyMeal = {
+    name: "",
+    price: 0,
+    description: "",
+    image: ""
+  }
+
+  const [didCreate, setDidCreate] = useState(false);
+  
   const [meal, setMeal]  = useState<Meal>({
     name: "Spring Salad",
     price: 599,
@@ -23,18 +32,25 @@ function CreateMeal() {
       },
       body: JSON.stringify(meal)
     })
-    console.log(await response.json());
+    const responseData = await response.json();
+
+    if (response.status === 201) {
+      setMeal(emptyMeal);
+      setDidCreate(true);
+    }
   }
 
 
   return (
     <div>
-      <Link className="App-link" to="/">Home</Link>
-      <div>
+      <div className="home-view">
         <h1>
           Create a Meal
         </h1>
-        <div>
+        {didCreate ? 
+          <div className="pill-button success-banner">Meal was created successfully. <Link className="App-link" to="/view-meals">View all meals</Link></div>
+          : null
+        }
           <form onSubmit={(e) => {
               submitForm(e)}
             } className="form">
@@ -64,9 +80,8 @@ function CreateMeal() {
               </div>
               <input className="form-field__input" id="image" name="image" value={meal.image} />
             </div>
-            <button>Create</button>
+            <button className="pill-button effect__bg-fade">Create</button>
           </form>
-        </div>
       </div>
     </div>
   )
