@@ -2,14 +2,7 @@ import { useEffect, useState } from "react";
 import {
   Link
 } from "react-router-dom";
-
-
-interface Meal {
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-}
+import { Meal } from "../models/meal";
 
 function ViewMeals() {
 
