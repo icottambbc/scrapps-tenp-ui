@@ -22,6 +22,14 @@ function CreateMeal() {
     image: "https://cdn.auth0.com/blog/whatabyte/salad-sm.png"
   });
 
+  const onChangeField = (value: string, fieldName: any) => {
+    let newMeal = {
+      ...meal,
+      [fieldName]: value
+    };
+    setMeal(newMeal)
+  }
+
   const submitForm = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(meal);
@@ -60,25 +68,33 @@ function CreateMeal() {
                   Name<span className="form-field__label--required"> *</span>
                 </label>
               </div>
-              <input className="form-field__input" id="name" name="name" value={meal.name} />
+              <input onChange={(e) => {
+                onChangeField(e.target.value, 'name');
+              }} className="form-field__input" id="name" name="name" value={meal.name} />
             </div>
             <div className="form-field">
               <div>
                 <label className="form-field__label" htmlFor="price">Price (in pence)<span className="form-field__label--required"> *</span></label>
               </div>
-              <input className="form-field__input" id="price" name="price" value={meal.price} />
+              <input onChange={(e) => {
+                onChangeField(e.target.value, 'price');
+              }} className="form-field__input" id="price" name="price" value={meal.price} />
             </div>
             <div className="form-field">
               <div>
                 <label className="form-field__label" htmlFor="description">Description<span className="form-field__label--required"> *</span></label>
               </div>
-              <input className="form-field__input" id="description" name="description" value={meal.description} />
+              <input onChange={(e) => {
+                onChangeField(e.target.value, 'description');
+              }} className="form-field__input" id="description" name="description" value={meal.description} />
             </div>
             <div className="form-field">
               <div>
                 <label className="form-field__label" htmlFor="image">Image URL<span className="form-field__label--required"> *</span></label>
               </div>
-              <input className="form-field__input" id="image" name="image" value={meal.image} />
+              <input onChange={(e) => {
+                onChangeField(e.target.value, 'image');
+              }} className="form-field__input" id="image" name="image" value={meal.image} />
             </div>
             <button className="pill-button effect__bg-fade">Create</button>
           </form>

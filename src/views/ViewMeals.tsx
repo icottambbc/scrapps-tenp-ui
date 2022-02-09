@@ -21,7 +21,7 @@ function ViewMeals() {
 
   return (
     <div>
-      <Link className="App-link" to="/">Home</Link>
+      {/* <Link className="App-link" to="/">Home</Link> */}
       <div>
         <h1>
           View Meals
