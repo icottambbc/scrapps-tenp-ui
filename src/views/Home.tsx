@@ -4,7 +4,7 @@ import {
 
 function Home() {
   return (
-  <div>
+  <div className="home-view">
     <h1>
       Welcome to Scrapps
     </h1>

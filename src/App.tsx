@@ -13,7 +13,6 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Link className="App-link" to="/">Home</Link>
         <Routes>
           <Route path="/"  element={<Home />}></Route>
           <Route path="/create-meal" element={<CreateMeal />}></Route>
